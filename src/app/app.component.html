@@ -21,10 +21,10 @@
 
 <hr>
 
-<div *ngFor="let product of products">
-    <h4><u>{{product.title}}</u></h4>
+<div *ngFor="let productt of listproduct">
+    <h4><u>{{productt.title}}</u></h4>
 
-    <img [src]="product.image" alt="">
+    <img [src]="productt.image" alt="">
 </div>
 
 <hr>
@@ -38,5 +38,9 @@
 
 <hr>
 
-<app-product></app-product>
+
+<div *ngFor="let product of products">
+    <app-product (productClicked)="clickProduct($event)"  [product]="product" ></app-product>
+</div>
+
 
