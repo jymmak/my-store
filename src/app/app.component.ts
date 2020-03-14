@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product} from './product.model'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Curso de Angular';
   items = ['casa', 'pelota', 'colegio', 'silla'];
-  products = [
+  products: Product[] = [
     {
       id: '1',
       image: 'https://picsum.photos/300/200?image=244',

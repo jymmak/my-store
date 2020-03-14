@@ -26,3 +26,12 @@
 
     <img [src]="product.image" alt="">
 </div>
+
+<hr>
+
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'Nicolas'">Nicolás</p>
+    <p *ngSwitchCase="'Julian'">Julián</p>
+    <p *ngSwitchCase="'Camilo'">Camilo</p>
+    <p *ngSwitchDefault>no hay match</p>
+</div>
