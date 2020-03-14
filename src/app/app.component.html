@@ -22,7 +22,7 @@
 <hr>
 
 <div *ngFor="let product of products">
-    <h4><u>{{product.curso}}</u></h4>
+    <h4><u>{{product.title}}</u></h4>
 
     <img [src]="product.image" alt="">
 </div>
@@ -35,3 +35,8 @@
     <p *ngSwitchCase="'Camilo'">Camilo</p>
     <p *ngSwitchDefault>no hay match</p>
 </div>
+
+<hr>
+
+<app-product></app-product>
+
