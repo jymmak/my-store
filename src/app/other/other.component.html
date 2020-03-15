@@ -18,15 +18,6 @@
         </li>
     </ul>
 </div>
-
-<hr>
-
-<div *ngFor="let productt of listproduct">
-    <h4><u>{{productt.title}}</u></h4>
-
-    <img [src]="productt.image" alt="">
-</div>
-
 <hr>
 
 <div [ngSwitch]="title">
@@ -38,12 +29,15 @@
 
 <hr>
 
-<h1>Estos son mis productos</h1>
-<div class="product-grid">
-    <app-product *ngFor="let product of products" (productClicked)="clickProduct($event)" [product]="product">
-    </app-product>
-</div>
-
-<hr>
 <input type="text" [(ngModel)]="power">
 {{power | expotencial}}
+
+
+<hr>
+<div class="product-grid">
+    <div *ngFor="let productt of listproduct">
+        <h4><u>{{productt.title}}</u></h4>
+        <img [src]="productt.image" alt="">
+    </div>
+
+</div>

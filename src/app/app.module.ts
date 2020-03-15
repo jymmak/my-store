@@ -8,7 +8,12 @@ import { ExpotencialPipe } from './pipe/expotencial.pipe';
 import { HighlightDirective } from './directive/highlight.directive';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
-import { ContacComponent } from './contac/contac.component';
+import { ContactComponent } from './contact/contact.component';
+import { OtherComponent } from './other/other.component';
+import { HeaderComponent } from './header/header.component';
+import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { ContacComponent } from './contac/contac.component';
     HighlightDirective,
     HomeComponent,
     ProductsComponent,
-    ContacComponent
+    ContactComponent,
+    OtherComponent,
+    HeaderComponent,
+    BannerComponent,
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
