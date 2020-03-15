@@ -5,12 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './component/product.component';
 import { ExpotencialPipe } from './pipe/expotencial.pipe';
+import { HighlightDirective } from './directive/highlight.directive';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
+import { ContacComponent } from './contac/contac.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    ExpotencialPipe
+    ExpotencialPipe,
+    HighlightDirective,
+    HomeComponent,
+    ProductsComponent,
+    ContacComponent
   ],
   imports: [
     BrowserModule,
