@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'expotencial'
+  name: 'exponential'
 })
-export class ExpotencialPipe implements PipeTransform {
+export class ExponentialPipe implements PipeTransform {
 
   transform(value: number): any {
     return Math.pow(value,4);
