@@ -5,6 +5,6 @@
 </span>
 <!-- <p>{{ product.description | slice:0:4 }} </p>
 <p>{{today | date}}</p> -->
-<button type="submit" (click)="addCart()">Agregar al carrito</button>
+<button type="submit" (click)="addCart()" mat-raised-button color="primary" >Agregar al carrito</button>
 <br>
 <a [routerLink]="['/products/', product.id]">Ver detalle</a>
