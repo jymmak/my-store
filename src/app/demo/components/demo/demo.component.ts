@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product.model';
+import { Product } from '../../../product.model';
 
 @Component({
-  selector: 'app-other',
-  templateUrl: './other.component.html',
-  styleUrls: ['./other.component.scss']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss']
 })
-export class OtherComponent implements OnInit {
+export class DemoComponent implements OnInit {
 
   constructor() { }
 
