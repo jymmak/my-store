@@ -10,7 +10,7 @@ import { Product } from '../../../product.model';
 })
 export class ProductDetailComponent implements OnInit {
   product: Product;
-  constructor(private route: ActivatedRoute, private productService: ProductsService) {
+  constructor(private route: ActivatedRoute, private productsService: ProductsService) {
 
   }
 
@@ -22,7 +22,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   fetchProduct(id: string) {
-    this.productService.getProduct(id).subscribe(product => {
+    this.productsService.getProduct(id).subscribe(product => {
       this.product = product;
     });
   }
@@ -31,15 +31,36 @@ export class ProductDetailComponent implements OnInit {
   crearProduct() {
 
     const newProduct: Product = {
-      id: '222',
+      id: '239',
       title: 'nuevo producto',
       image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg',
-      price: 3000,
+      price: 214000,
       description: 'nuevo producto'
     }
-    this.productService.createProduct(newProduct)
-    .subscribe(product => {
-      console.log(product);
+    this.productsService.createProduct(newProduct)
+      .subscribe(product => {
+        console.log(product);
+      });
+  }
+
+  updateProduct() {
+    const updateProduct: Partial<Product> = {
+      price: 19000,
+      description: 'edicion titulo'
+    }
+    this.productsService.updateProduct('5', updateProduct)
+      .subscribe(product => {
+        console.log(product);
+      });
+  }
+
+  deleteProduct() {
+    this.productsService.deleteProduct('232').subscribe(rta => {
+      console.log('producto borrado');
     });
   }
+
+
+
+
 }
