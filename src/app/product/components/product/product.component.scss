@@ -1,10 +1,40 @@
-:host{
-  margin: 2px;
-  border-radius: 5px;
-  display: block;
-  border: 1px solid green;
+.detail {
+  margin: 0 8px;
+}
+.detail {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
 }
 
-img{
-  max-width: 100%;
+.crop-image{
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  img {
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

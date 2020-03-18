@@ -5,7 +5,8 @@ import {
     EventEmitter,
     OnChanges,
     SimpleChanges,
-    OnInit
+    OnInit,
+    OnDestroy
 } from '@angular/core';
 import { Product } from '../../../product.model'
 
@@ -14,12 +15,12 @@ import { Product } from '../../../product.model'
     templateUrl: './product.component.html',
     styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnChanges, OnInit {
+export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     @Input() product: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
-    
+
     today = new Date();
-    
+
     constructor() {
         console.log('1. constructor')
     }
@@ -28,7 +29,10 @@ export class ProductComponent implements OnChanges, OnInit {
         console.log(changes);
     }
     ngOnInit() {
-        console.log('3. ngOnInit')
+        console.log('3. ngOnInit');
+    }
+    ngOnDestroy() {
+        console.log('5. ngOnDestroy');
     }
     addCart() {
         console.log("agregamos al carrito");
