@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 
 
-
 @NgModule({
   declarations: [
     ExponentialPipe,
@@ -26,6 +25,7 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     RouterModule,
     MaterialModule
+  
   ]
 })
 export class SharedModule { }
