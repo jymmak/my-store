@@ -1,14 +1,15 @@
-<div>
-    <img [src]="product.image" alt="">
-</div>
+<div *ngIf="product">
+    <div>
+        <img [src]="product.image" alt="">
+    </div>
+    <div>
+        <ul>
+            <li>Nombre: {{product.title}}</li>
+            <li>Precio: {{product.price | currency}}</li>
 
+        </ul>
+        <p>Description: {{product.description}}</p>
+    </div>
 
-<div>
-    <ul>
-        <li>Nombre: {{product.title}}</li>
-        <li>Precio: {{product.price | currency}}</li>
-
-    </ul>
-
-    <p>Description: {{product.description}}</p>
+    <button type="submit" (click)="crearProduct()">crear</button>
 </div>

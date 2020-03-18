@@ -1,56 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Product } from '../../product.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  products: Product[] = [
-    {
-      id: '1',
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg',
-      title: 'Vestido Amarett',
-      price: 8000,
-      description: 'gdcgdgcdgcg'
-    },
-    {
-      id: '2',
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4.jpg',
-      title: 'Vestido  Danuska',
-      price: 8000,
-      description: 'gdcgdgcdgcg'
-    },
-    {
-      id: '3',
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2.jpg',
-      title: 'Casaca Brown',
-      price: 8000,
-      description: 'gdcgdgcdgcg'
-    },
-    {
-      id: '4',
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3.jpg',
-      title: 'Casaca still',
-      price: 8000,
-      description: 'gdcgdgcdgcg'
-    },
-    {
-      id: '5',
-      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/6.jpg',
-      title: 'Vestido Breska',
-      price: 8000,
-      description: 'gdcgdgcdgcg'
-    },
-
-  ];
-  constructor() { }
+  constructor(private http: HttpClient) {
+    
+  }
 
   getAllProducts() {
-    return this.products;
+    return this.http.get<Product[]>(`${environment.url_api}/products/`);
   }
 
   getProduct(id:string){
-    return this.products.find(item => id===item.id)
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
+  }
+
+  createProduct(product: Product){
+    return this.http.post(`${environment.url_api}/products/`, product)
   }
 }
