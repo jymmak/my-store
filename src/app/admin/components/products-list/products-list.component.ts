@@ -22,4 +22,10 @@ export class ProductsListComponent implements OnInit {
       this.products = products;
     });
   }
+
+  deleteProduct(id:string){
+    this.productsService.deleteProduct(id).subscribe(rta => {
+      this.fetchProducts();
+    })
+  }
 }
