@@ -9,7 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { TableComponent } from './components/table/table.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
-
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,9 @@ import { ProductsListComponent } from './components/products-list/products-list.
     NavigationComponent,
     TableComponent,
     DashboardComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CreateProductComponent
+    
   ],
   imports: [
     CommonModule,

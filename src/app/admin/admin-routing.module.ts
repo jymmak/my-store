@@ -5,6 +5,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TableComponent } from './components/table/table.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,12 @@ const routes: Routes = [
       {
         path: 'products-list',
         component: ProductsListComponent
-      },
+      }
+      ,
+      {
+        path: 'create-product',
+        component: CreateProductComponent
+      }
     ]
 
   }
