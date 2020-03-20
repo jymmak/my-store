@@ -40,7 +40,7 @@ export class ProductEditComponent implements OnInit {
       this.productsService.updateProduct(this.id, product)
       .subscribe((newProduct) => {
         console.log(newProduct);
-        this.router.navigate(['./admin/products']);
+        this.router.navigate(['./admin/products-list']);
       });
     }
   }
