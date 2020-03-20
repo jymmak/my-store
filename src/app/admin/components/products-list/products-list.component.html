@@ -1,5 +1,5 @@
 <div class="container">
-    <a mat-raised-button color="primary" routerLink="/admin/create-product" class="buttom-crear">Crear</a>
+    <a mat-raised-button color="primary" routerLink="/admin/product/create" class="buttom-crear">Crear</a>
     <div class="mat-elevation-z8">
       
         <table mat-table [dataSource]="products">
@@ -26,7 +26,7 @@
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> Actions </th>
                 <td mat-cell *matCellDef="let product">
-                    <button mat-icon-button>
+                    <button mat-icon-button [routerLink]="['/admin/product/edit/', product.id]">
                         <mat-icon>mode_edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn" (click)="deleteProduct(product.id)">
