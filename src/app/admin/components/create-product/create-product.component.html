@@ -1,4 +1,3 @@
-    
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
         <mat-card class="shipping-card">
@@ -12,8 +11,7 @@
                             <input placeholder="id" formControlName="id" matInput type="text">
                         </mat-form-field>
                     </div>
-                </div>
-                <div class="row">
+
                     <div class="col-xs">
                         <mat-form-field>
                             <input placeholder="title" formControlName="title" matInput type="text">
@@ -28,6 +26,12 @@
                             <p *ngIf="priceField.hasError('required')">el campo es requerido</p>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <img   *ngIf="image$ | async as image" [src]="image" alt="">
+                        <input type="file" (change)="uploadFile($event)">
+                    </div>
                     <div class="col-xs">
                         <mat-form-field class="full-width">
                             <textarea placeholder="description" matInput formControlName="description"></textarea>
@@ -36,8 +40,7 @@
                 </div>
             </mat-card-content>
             <mat-card-actions>
-                <button  [disabled]="form.invalid" mat-raised-button color="primary" 
-                type="submit">Guardar</button>
+                <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">Guardar</button>
             </mat-card-actions>
         </mat-card>
 
