@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
-  constructor(private authService: AuthService, private router:Router) {
+  constructor(private authService: AuthService, private router: Router) {
 
   }
 
@@ -16,11 +16,10 @@ export class AdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.authService.hasUser().pipe(
-      
-      map(user => user === null? false : true),
+      map(user => user === null ? false : true),
       tap(haUser => {
-        if(!haUser){
-          this.router.navigate(['auth/login'])
+        if (!haUser) {
+          this.router.navigate(['auth/login']);
         }
       })
     );

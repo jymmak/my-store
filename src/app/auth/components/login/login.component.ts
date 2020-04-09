@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/admin']);
         })
         .catch(() => {
-          alert('usuario no es válido')
+          alert('usuario no es válido');
         })
 
         ;
@@ -45,5 +45,4 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]],
     });
   }
-
 }
