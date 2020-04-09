@@ -9,6 +9,7 @@ import { ProductsService } from 'src/app/core/services/product/products.service'
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.scss']
 })
+
 export class ProductEditComponent implements OnInit {
 
   form: FormGroup;
@@ -58,5 +59,4 @@ export class ProductEditComponent implements OnInit {
   get priceField() {
     return this.form.get('price');
   }
-
 }

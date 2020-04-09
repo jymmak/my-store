@@ -21,7 +21,6 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductsListComponent,
     CreateProductComponent,
     ProductEditComponent
-    
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router'
-import { ProductsService } from '../../../core/services/product/products.service'
+import { ActivatedRoute, Params } from '@angular/router';
+import { ProductsService } from '../../../core/services/product/products.service';
 import { Product } from '../../../core/models/product.model';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
-      this.fetchProduct(id)
+      this.fetchProduct(id);
     });
   }
 
@@ -27,7 +27,6 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-
   crearProduct() {
 
     const newProduct: Product = {
@@ -36,7 +35,8 @@ export class ProductDetailComponent implements OnInit {
       image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg',
       price: 214000,
       description: 'nuevo producto'
-    }
+    };
+
     this.productsService.createProduct(newProduct)
       .subscribe(product => {
         console.log(product);
@@ -47,7 +47,8 @@ export class ProductDetailComponent implements OnInit {
     const updateProduct: Partial<Product> = {
       price: 19000,
       description: 'edicion titulo'
-    }
+    };
+
     this.productsService.updateProduct('5', updateProduct)
       .subscribe(product => {
         console.log(product);

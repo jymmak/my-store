@@ -13,7 +13,7 @@ export class OrderComponent implements OnInit {
   constructor(
     private cartService: CartService
   ) {
-    this.products$= this.cartService.cart$;
+    this.products$ = this.cartService.cart$;
   }
 
   ngOnInit(): void {

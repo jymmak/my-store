@@ -22,7 +22,7 @@ export class NavigationComponent {
   logout() {
     this.auth.logout()
       .then(() => {
-        this.router.navigate(['/home'])
-      })
+        this.router.navigate(['/home']);
+      });
   }
 }

@@ -51,7 +51,7 @@ export class CreateProductComponent implements OnInit {
         finalize(() => {
           this.image$ = fileRef.getDownloadURL();
           this.image$.subscribe(url => {
-            console.log(url)
+            console.log(url);
             this.form.get('image').setValue(url);
           });
         })
