@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProductsService } from '../../../core/services/product/products.service';
-import { Product } from '../../../core/models/product.model';
+import { ProductsService } from '@core/services/product/products.service';
+import { Product } from '@core/models/product.model';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,22 +11,16 @@ import { Product } from '../../../core/models/product.model';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  product: Product;
+  product$: Observable<Product>;
   constructor(private route: ActivatedRoute, private productsService: ProductsService) {
 
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      const id = params.id;
-      this.fetchProduct(id);
-    });
-  }
-
-  fetchProduct(id: string) {
-    this.productsService.getProduct(id).subscribe(product => {
-      this.product = product;
-    });
+    this.product$ = this.route.params
+      .pipe(
+        switchMap((params: Params) => this.productsService.getProduct(params.id))
+      );
   }
 
   crearProduct() {
@@ -36,7 +32,6 @@ export class ProductDetailComponent implements OnInit {
       price: 214000,
       description: 'nuevo producto'
     };
-
     this.productsService.createProduct(newProduct)
       .subscribe(product => {
         console.log(product);
@@ -48,7 +43,6 @@ export class ProductDetailComponent implements OnInit {
       price: 19000,
       description: 'edicion titulo'
     };
-
     this.productsService.updateProduct('5', updateProduct)
       .subscribe(product => {
         console.log(product);
@@ -61,7 +55,15 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-
-
-
+  getRandomUsers() {
+    this.productsService.getRandomUsers()
+      .subscribe(
+        users => {
+          console.log(users);
+        },
+        error => {
+          console.error(error);
+        }
+      );
+  }
 }
