@@ -36,7 +36,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSortModule,
     MatGridListModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    
 
   ],
   exports: [

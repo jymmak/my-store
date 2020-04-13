@@ -13,8 +13,8 @@ export class CartService {
   constructor() { }
 
 
-  addCart(product:Product){
-    this.products = [...this.products,product];
+  addCart(product: Product) {
+    this.products = [...this.products, product];
     this.cart.next(this.products);
   }
 }
